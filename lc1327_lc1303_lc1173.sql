@@ -17,6 +17,7 @@ group by team_id) as Teams on Employee.team_id = Teams.team_id  ;
 
 # lc 1173
 
-select round((select count(*) from Delivery
-where customer_pref_delivery_date = order_date)/(select count(*) from Delivery) *100, 2) 
+select round((
+    select count(*) from Delivery
+    where customer_pref_delivery_date = order_date)/(select count(*) from Delivery) *100, 2) 
 as 'immediate_percentage' ;
